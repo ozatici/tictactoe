@@ -6,5 +6,10 @@ describe('A tic tac toe game should be played', () => {
             const game = new TicTacToeGame();
             expect(game).toBeTruthy();
         });
+
+        it("The game should have a board with 3 rows", () => {
+            const game = new TicTacToeGame();
+            expect(game.board.length).toEqual(3);
+        });
     })
 })
