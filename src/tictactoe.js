@@ -56,6 +56,40 @@ class TicTacToe {
                 }
         }
       }
+
+      checkforWinnerDiagonal(game, player) {
+        if (
+          game.board[0][0] === player.id &&
+          game.board[1][1] === player.id &&
+          game.board[2][2] === player.id
+        ) {
+          game.winner = player.id;
+    
+        }
+        if (
+          game.board[2][0] === player.id &&
+          game.board[1][1] === player.id &&
+          game.board[0][2] === player.id
+        ) {
+          game.winner = player.id;    
+        }
+        if (
+            game.board[0][0] === player.id &&
+            game.board[1][1] === player.id &&
+            game.board[2][2] === player.id
+          ) {
+            game.winner = player.id;    
+          }
+          if (
+            game.board[2][0] === player.id &&
+            game.board[1][1] === player.id &&
+            game.board[0][2] === player.id
+          ) {
+            game.winner = player.id;
+    
+          }
+    
+      }
      
 
 }
