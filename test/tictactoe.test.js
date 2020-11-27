@@ -93,7 +93,7 @@ describe('A tic tac toe game should be played', () => {
             expect(game.winner).toEqual("X");
         })
 
-        it('should mark draw as the winner if the board is full and there is no winner', () => {
+        it('should check for a draw if the board is full and there is no winner', () => {
             const playerX = new Player("X");
             const playerO = new Player("O");
             const game = new TicTacToeGame(playerX, playerO);
@@ -102,8 +102,7 @@ describe('A tic tac toe game should be played', () => {
                 ["O", "O", "X"],
                 ["X", "X", "O"],
             ]
-            game.checkforDraw(game, game.playerX);
-            expect(game.winner).toEqual("DRAW");
+            expect(game.checkForDraw(game, game.playerX)).toEqual(true);
         })
     })
 })

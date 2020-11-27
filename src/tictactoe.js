@@ -43,6 +43,7 @@ class TicTacToe {
                 game.board[1][i] === player.id && 
                 game.board[2][i] === player.id) {
                     game.winner = player.id;
+                    return true;
             }
         }
       }
@@ -53,6 +54,7 @@ class TicTacToe {
                 game.board[i][1] === player.id &&
                 game.board[i][2] === player.id) {
                     game.winner = player.id;
+                    return true;
                 }
         }
       }
@@ -64,6 +66,8 @@ class TicTacToe {
           game.board[2][2] === player.id
         ) {
           game.winner = player.id;
+          return true;
+
     
         }
         if (
@@ -72,6 +76,8 @@ class TicTacToe {
           game.board[0][2] === player.id
         ) {
           game.winner = player.id;    
+          return true;
+
         }
         if (
             game.board[0][0] === player.id &&
@@ -79,6 +85,8 @@ class TicTacToe {
             game.board[2][2] === player.id
           ) {
             game.winner = player.id;    
+            return true;
+
           }
           if (
             game.board[2][0] === player.id &&
@@ -86,10 +94,27 @@ class TicTacToe {
             game.board[0][2] === player.id
           ) {
             game.winner = player.id;
+            return true;
+
     
           }
     
       }
+
+    checkForDraw(game) {
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                if (game.board[i][j] === '') {
+                    return false;
+                }
+            }
+        }
+        if (this.checkForWinnerVertical(game, game.playerO) || this.checkForWinnerHorizontal(game, game.playerO) || this.checkforWinnerDiagonal(game, game.playerO),
+         this.checkforWinnerDiagonal(game, game.playerX) || this.checkForWinnerHorizontal(game, game.playerX), this.checkForWinnerVertical(game, game.playerX) ) {
+            return false;
+        }
+      return true;
+    }
      
 
 }
