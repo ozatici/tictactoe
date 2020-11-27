@@ -16,7 +16,28 @@ class TicTacToe {
 
   start(game) {
     game.gameRunning = true;
-    
+    let locToInsert = 0;
+    let locToInsert2 = 0;
+
+    locToInsert = this.randomInteger(0, 2);
+    locToInsert2 = this.randomInteger(0, 2);
+
+    this.insertIntoBoard(
+        game.nextTurn.id,
+        locToInsert,
+        locToInsert2,
+        game.board
+    )
+    this.nextTurn = this.playerO;
+    locToInsert = this.randomInteger(0, 2);
+    locToInsert2 = this.randomInteger(0, 2);
+
+    this.insertIntoBoard(
+        game.nextTurn.id,
+        locToInsert,
+        locToInsert2,
+        game.board
+    )
    
 
   }
