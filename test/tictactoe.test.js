@@ -16,5 +16,10 @@ describe('A tic tac toe game should be played', () => {
             const game = new TicTacToeGame();
             expect(game.board[0].length).toEqual(3);
         });
+
+        it("should be able to create a player", () => {
+            const playerX = new Player();
+            expect(playerX).toBeTruthy();
+        });
     })
 })
