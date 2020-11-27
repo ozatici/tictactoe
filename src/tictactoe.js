@@ -16,30 +16,39 @@ class TicTacToe {
 
   start(game) {
     game.gameRunning = true;
-    let locToInsert = 0;
-    let locToInsert2 = 0;
+    while (game.gameRunning) {
+      let locToInsert = 0;
+      let locToInsert2 = 0;
 
-    locToInsert = this.randomInteger(0, 2);
-    locToInsert2 = this.randomInteger(0, 2);
+      locToInsert = this.randomInteger(0, 2);
+      locToInsert2 = this.randomInteger(0, 2);
 
-    this.insertIntoBoard(
+      this.insertIntoBoard(
         game.nextTurn.id,
         locToInsert,
         locToInsert2,
         game.board
-    )
-    this.nextTurn = this.playerO;
-    locToInsert = this.randomInteger(0, 2);
-    locToInsert2 = this.randomInteger(0, 2);
+      );
 
-    this.insertIntoBoard(
-        game.nextTurn.id,
-        locToInsert,
-        locToInsert2,
-        game.board
-    )
-   
+      if (
+        this.checkForWinnerVertical(game, game.playerO) ||
+        this.checkForWinnerVertical(game, game.playerX) ||
+        this.checkforWinnerDiagonal(game, game.playerX) ||
+        this.checkforWinnerDiagonal(game, game.playerO) ||
+        this.checkForWinnerHorizontal(game, game.playerX) ||
+        this.checkForWinnerHorizontal(game, game.playerO)
+      ) {
+          game.gameRunning = false;
+      }
 
+      this.nextTurn === this.playerX
+        ? (this.nextTurn = this.playerO)
+        : (this.nextTurn = this.playerX);
+      if (this.checkForDraw(game)) {
+        game.gameRunning = false;
+        game.winner = "DRAW";
+      }
+    }
   }
 
   randomInteger(min, max) {
@@ -74,9 +83,11 @@ class TicTacToe {
   }
 
   insertIntoBoard(id, locToInsert, locToInsert2, board) {
-    if(board[locToInsert][locToInsert2] !== 'X' && 
-    board[locToInsert][locToInsert2] !== 'Y') {
-        board[locToInsert][locToInsert2] = id;
+    if (
+      board[locToInsert][locToInsert2] !== "X" &&
+      board[locToInsert][locToInsert2] !== "Y"
+    ) {
+      board[locToInsert][locToInsert2] = id;
     }
   }
 
