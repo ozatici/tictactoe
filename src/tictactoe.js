@@ -42,7 +42,17 @@ class TicTacToe {
             if (game.board[0][i] === player.id &&
                 game.board[1][i] === player.id && 
                 game.board[2][i] === player.id) {
-                    game.winner = 'X';
+                    game.winner = player.id;
+            }
+        }
+      }
+
+      checkForWinnerHorizontal(game, player) {
+        for (var i = 0; i < game.board[0].length; i++) {
+            if (game.board[i][0] === player.id &&
+                game.board[i][1] === player.id &&
+                game.board[i][2] === player.id) {
+                    game.winner = player.id;
                 }
         }
       }

@@ -76,7 +76,7 @@ describe('A tic tac toe game should be played', () => {
                 ["O", "O", "O"],
                 ["X", "", ""],
             ]
-            game.checkforWinnerHorizontal(game, game.playerO);
+            game.checkForWinnerHorizontal(game, game.playerO);
             expect(game.winner).toEqual("O");
         })
     })
