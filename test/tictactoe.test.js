@@ -101,7 +101,7 @@ describe("A tic tac toe game should be played", () => {
         ["O", "O", "X"],
         ["X", "X", "O"],
       ];
-      expect(game.checkForDraw(game, game.playerX)).toEqual(true);
+      expect(game.checkForFullBoard(game)).toEqual(true);
     });
   });
 
