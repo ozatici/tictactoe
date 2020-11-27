@@ -18,13 +18,14 @@ The game will start with player X
 unit tests:
 
 ---> SET UP:
-1. A game of tic tac toe should be created.
-2. We should get a message about this on the console, with the board printed and the text in the obve uat printed.
-2. The game should have a board with 3 rows and 3 columns.
-3. Should be able to create a player
-4. The player must have an id
-5. The game should have 2 players - playerX and playerO.
-6. Player X should be marked as the next player to take a turn.
+1. ✅ A game of tic tac toe should be created.
+2. ✅ The game should have a board with 3 rows.
+3. ✅ The game should have a board with 3 columns.
+4. Should be able to create a player
+5. The player must have an id
+6. The game should have 2 players - playerX and playerO.
+7. Player X should be marked as the next player to take a turn.
+8. We should get a message about this on the console, with the board printed and the text in the obve uat printed.
 
 ---> ESTABLISHING THE CONDITIONS UNDER WHICH THE GAME IS WON:
 1. Player X wins with a vertical line
