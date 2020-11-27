@@ -19,7 +19,7 @@ describe('A tic tac toe game should be played', () => {
         });
 
         it("should be able to create a player", () => {
-            const playerX = new Player();
+            const playerX = new Player('X');
             expect(playerX).toBeTruthy();
         });
 
