@@ -16,6 +16,13 @@ class TicTacToe {
 
   start(game) {
     game.gameRunning = true;
+    
+   
+
+  }
+
+  randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   printIntro() {
@@ -46,7 +53,10 @@ class TicTacToe {
   }
 
   insertIntoBoard(id, locToInsert, locToInsert2, board) {
-    board[locToInsert][locToInsert2] = id;
+    if(board[locToInsert][locToInsert2] !== 'X' && 
+    board[locToInsert][locToInsert2] !== 'Y') {
+        board[locToInsert][locToInsert2] = id;
+    }
   }
 
   checkForWinnerVertical(game, player) {
