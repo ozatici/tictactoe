@@ -79,5 +79,18 @@ describe('A tic tac toe game should be played', () => {
             game.checkForWinnerHorizontal(game, game.playerO);
             expect(game.winner).toEqual("O");
         })
+
+        it('should mark player X as winner if they have a diagonal line', () => {
+            const playerX = new Player("X");
+            const playerO = new Player("O");
+            const game = new TicTacToeGame(playerX, playerO);
+            game.board = [
+                ["X", "", ""],
+                ["O", "X", ""],
+                ["O", "", "X"],
+            ]
+            game.checkforWinnerDiagonal(game, game.playerX);
+            expect(game.winner).toEqual("X");
+        })
     })
 })

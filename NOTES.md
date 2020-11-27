@@ -28,8 +28,8 @@ unit tests:
 8. ✅ We should get a message about this on the console, with the board printed and the text in the obve uat printed.
 
 ---> ESTABLISHING THE CONDITIONS UNDER WHICH THE GAME IS WON:
-1. Player X wins with a vertical line
-2. Player O wins with a horizontal line
+1. ✅ Player X wins with a vertical line
+2. ✅ Player O wins with a horizontal line
 3. Player X wins with a diagonal line
 4. The game ends with a draw.
 
