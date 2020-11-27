@@ -162,7 +162,7 @@ describe("A tic tac toe game should be played", () => {
         const playerO = new Player("O");
         const game = new TicTacToeGame(playerX, playerO);
         game.start(game);
-        expect(game.winner).toNotEqual('');
+        expect(game.gameRunning).toEqual(false);
       })
 
   });
