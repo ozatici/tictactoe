@@ -11,7 +11,12 @@ class TicTacToe {
 
         this.nextTurn = this.playerX;
         this.winner = '';
+        this.gameRunning = false;
         
+    }
+
+    start(game) {
+        game.gameRunning = true;
     }
 
     printIntro() {
@@ -36,6 +41,10 @@ class TicTacToe {
         players.push(this.playerX, this.playerO);
         return players;
     }
+
+    isStarted() {
+        return this.gameRunning;
+      }
 
       checkForWinnerVertical(game, player) {
         for (var i = 0; i < game.board[0].length; i++) {

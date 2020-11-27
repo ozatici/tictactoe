@@ -111,6 +111,7 @@ describe('A tic tac toe game should be played', () => {
             const playerX = new Player("X");
             const playerO = new Player("O");
             const game = new TicTacToeGame(playerX, playerO);
+            game.start(game);
             expect(game.isStarted()).toEqual(true);
 
         })
