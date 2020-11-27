@@ -30,6 +30,5 @@ unit tests:
 ---> ESTABLISHING THE CONDITIONS UNDER WHICH THE GAME IS WON:
 1. ✅ Player X wins with a vertical line
 2. ✅ Player O wins with a horizontal line
-3. Player X wins with a diagonal line
-4. The game ends with a draw.
-
+3. ✅ Player X wins with a diagonal line
+4. should mark draw as the winner if the board is full and there is no winner
