@@ -39,6 +39,8 @@ class TicTacToe {
         this.checkForWinnerHorizontal(game, game.playerO)
       ) {
           game.gameRunning = false;
+          this.printFinalBoard(game);
+
       }
 
       this.nextTurn === this.playerX
@@ -47,8 +49,25 @@ class TicTacToe {
       if (this.checkForDraw(game)) {
         game.gameRunning = false;
         game.winner = "DRAW";
+        this.printFinalBoard(game);
+
       }
     }
+  }
+
+  printFinalBoard(game) {
+
+    let board = "";
+    for (var i = 0; i < this.board.length; i++) {
+      for (var j = 0; j < this.board.length; j++) {
+        board += this.board[i][j] + "|";
+      }
+      board += "\n";
+      board += "-+-+-";
+      board += "\n";
+    }
+    console.log(board);
+   console.log("PLAYER " + game.winner + " WON!")
   }
 
   randomInteger(min, max) {

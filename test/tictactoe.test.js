@@ -163,9 +163,10 @@ describe("A tic tac toe game should be played", () => {
         const playerX = new Player("X");
         const playerO = new Player("O");
         const game = new TicTacToeGame(playerX, playerO);
+        const consoleSpy = jest.spyOn(game, "printFinalBoard");
         game.start(game);
-        expect(game.printFinalBoard()).toHaveBeenCalled();
-      })
+        expect(consoleSpy).toHaveBeenCalled();
+        })
 
   });
 });
