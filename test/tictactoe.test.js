@@ -51,4 +51,19 @@ describe('A tic tac toe game should be played', () => {
             expect(consoleSpy).toHaveBeenCalled();
         })
     })
+
+    describe('The rules under which the game is won should be established', () => {
+        it('should mark player X as winner if they have a vertical line', () => {
+            const playerX = new Player("X");
+            const playerO = new Player("O");
+            const game = new TicTacToeGame(playerX, playerO);
+            game.board = [
+                ["X", "", ""],
+                ["X", "O", ""],
+                ["X", "", "X"],
+            ]
+            expect(game.winner).toEqual("X");
+
+        })
+    })
 })
