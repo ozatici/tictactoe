@@ -22,5 +22,10 @@ describe('A tic tac toe game should be played', () => {
             const playerX = new Player();
             expect(playerX).toBeTruthy();
         });
+
+        it("the must have an id", () => {
+           let playerX = () => new Player(null);
+           expect(playerX).toThrow("expception");
+        });
     })
 })
