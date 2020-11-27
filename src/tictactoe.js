@@ -8,6 +8,8 @@ class TicTacToe {
 
         this.playerX = playerX;
         this.playerO = playerO;
+
+        this.nextTurn = this.playerX;
     }
 
     getPlayers() {
