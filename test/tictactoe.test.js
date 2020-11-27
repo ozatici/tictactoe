@@ -138,15 +138,23 @@ describe("A tic tac toe game should be played", () => {
         expect(game.board[0][0]).toEqual("X");
       });
 
-      it("The piece shouldn't be inserted if one is already there", () => {
+      it("After player X takes a turn, player O takes a turn (both using random numbers)", () => {
         const playerX = new Player("X");
         const playerO = new Player("O");
         const game = new TicTacToeGame(playerX, playerO);
         game.start(game);
-        game.insertIntoBoard("X", 0, 0, game.board);
-        game.insertIntoBoard("O", 0, 0, game.board);
+        let row1 = game.board[0].includes("X");
+        let row2 = game.board[1].includes("X");
+        let row3 = game.board[2].includes("X");
+        let containsX = row1 || row2 || row3;
 
-        expect(game.board[0][0]).toEqual("X");
+        row1 = game.board[0].includes("O");
+        row2 = game.board[1].includes("O");
+        row3 = game.board[2].includes("O");
+        let containsY = row1 || row2 || row3;
+        let XandYPresent = containsX && containsY;
+
+        expect(XandYPresent).toEqual(true);
       });
   });
 });
