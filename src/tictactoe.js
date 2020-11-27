@@ -38,9 +38,14 @@ class TicTacToe {
         this.checkforWinnerDiagonal(game, game.playerX) ||
         this.checkforWinnerDiagonal(game, game.playerO) ||
         this.checkForWinnerHorizontal(game, game.playerX) ||
-        this.checkForWinnerHorizontal(game, game.playerO)
+        this.checkForWinnerHorizontal(game, game.playerO) || 
+        this.checkForFullBoard(game)
       ) {
           game.gameRunning = false;
+          this.printFinalBoard(game);
+          if (game.winner !== 'X' && game.winner !== 'O') {
+              game.winner = "DRAW"
+          }
           this.printFinalBoard(game);
 
       }
@@ -48,12 +53,6 @@ class TicTacToe {
       this.nextTurn === this.playerX
         ? (this.nextTurn = this.playerO)
         : (this.nextTurn = this.playerX);
-      if (this.checkForDraw(game)) {
-        game.gameRunning = false;
-        game.winner = "DRAW";
-        this.printFinalBoard(game);
-
-      }
     }
   }
 
@@ -175,23 +174,13 @@ class TicTacToe {
     }
   }
 
-  checkForDraw(game) {
+  checkForFullBoard(game) {
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
         if (game.board[i][j] === " ") {
           return false;
         }
       }
-    }
-    if (
-      (this.checkForWinnerVertical(game, game.playerO) ||
-        this.checkForWinnerHorizontal(game, game.playerO) ||
-        this.checkforWinnerDiagonal(game, game.playerO),
-      this.checkforWinnerDiagonal(game, game.playerX) ||
-        this.checkForWinnerHorizontal(game, game.playerX),
-      this.checkForWinnerVertical(game, game.playerX))
-    ) {
-      return false;
     }
     return true;
   }
