@@ -1,9 +1,9 @@
 class TicTacToe {
   constructor(playerX, playerO) {
     this.board = [
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""],
+      [" ", " ", " "],
+      [" ", " ", " "],
+      [" ", " ", " "],
     ];
 
     this.playerX = playerX;
@@ -59,7 +59,7 @@ class TicTacToe {
 
   printBoard(game) {
     let board = "";
-    for (var i = 0; i < this.board.length; i++) {
+    for (var i = 0; i < this.board.length - 1; i++) {
       for (var j = 0; j < this.board.length -1; j++) {
         board += this.board[i][j] + "|";
       }
@@ -69,6 +69,10 @@ class TicTacToe {
       board += "-+-+-";
       board += "\n";
     }
+    board += this.board[2][0] + "|";
+    board += this.board[2][1] + "|";
+    board += this.board[2][2];
+
     console.log(board);
 
   }
@@ -174,7 +178,7 @@ class TicTacToe {
   checkForDraw(game) {
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
-        if (game.board[i][j] === "") {
+        if (game.board[i][j] === " ") {
           return false;
         }
       }
