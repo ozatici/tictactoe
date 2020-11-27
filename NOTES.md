@@ -36,4 +36,6 @@ unit tests:
 ---> GAME PLAY
 1. ✅ The game should be started
 2. ✅ Player X should take a turn by inserting a piece
-3. The piece shouldn't be inserted if a piece is already there.
+3. ✅ The piece shouldn't be inserted if a piece is already there.
+4. ✅ After player X takes a turn, player O takes a turn (both using random numbers)
+5. The game should continue to be played until a winner or draw is established. 
