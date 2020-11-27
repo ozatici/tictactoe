@@ -31,4 +31,8 @@ unit tests:
 1. ✅ Player X wins with a vertical line
 2. ✅ Player O wins with a horizontal line
 3. ✅ Player X wins with a diagonal line
-4. should mark draw as the winner if the board is full and there is no winner
+4. ✅ should mark draw as the winner if the board is full and there is no winner
+
+---> GAME PLAY
+1. The game should be started
+2. Player X should take a turn by inserting a piece
