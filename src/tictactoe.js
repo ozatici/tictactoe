@@ -15,6 +15,8 @@ class TicTacToe {
   }
 
   start(game) {
+    this.printIntro(game);
+
     game.gameRunning = true;
     while (game.gameRunning) {
       let locToInsert = 0;
@@ -55,18 +57,25 @@ class TicTacToe {
     }
   }
 
-  printFinalBoard(game) {
-
+  printBoard(game) {
     let board = "";
     for (var i = 0; i < this.board.length; i++) {
-      for (var j = 0; j < this.board.length; j++) {
+      for (var j = 0; j < this.board.length -1; j++) {
         board += this.board[i][j] + "|";
       }
+      board += this.board[i][2];
+
       board += "\n";
       board += "-+-+-";
       board += "\n";
     }
     console.log(board);
+
+  }
+
+  printFinalBoard(game) {
+    this.printBoard(game);
+
    console.log("PLAYER " + game.winner + " WON!")
   }
 
@@ -74,19 +83,10 @@ class TicTacToe {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  printIntro() {
+  printIntro(game) {
     console.log("Game Board Creation...");
 
-    let board = "";
-    for (var i = 0; i < this.board.length; i++) {
-      for (var j = 0; j < this.board.length; j++) {
-        board += this.board[i][j] + "|";
-      }
-      board += "\n";
-      board += "-+-+-";
-      board += "\n";
-    }
-    console.log(board);
+    this.printBoard(game);
     console.log("Board Created.");
     console.log("The game will start with player X");
   }
