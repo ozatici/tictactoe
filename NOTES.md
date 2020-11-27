@@ -21,7 +21,7 @@ unit tests:
 1. ✅ A game of tic tac toe should be created.
 2. ✅ The game should have a board with 3 rows.
 3. ✅ The game should have a board with 3 columns.
-4. Should be able to create a player
+4. ✅ Should be able to create a player
 5. The player must have an id
 6. The game should have 2 players - playerX and playerO.
 7. Player X should be marked as the next player to take a turn.

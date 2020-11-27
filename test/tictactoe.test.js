@@ -1,4 +1,5 @@
 const TicTacToeGame = require("../src/tictactoe.js");
+const Player = require("../src/player.js");
 
 describe('A tic tac toe game should be played', () => {
     describe('The game should be set up', () => {
