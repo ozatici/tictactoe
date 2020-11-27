@@ -155,7 +155,16 @@ describe("A tic tac toe game should be played", () => {
         const playerO = new Player("O");
         const game = new TicTacToeGame(playerX, playerO);
         game.start(game);
+        console.log("winner", game.winner)
         expect(game.gameRunning).toEqual(false);
+      })
+
+      it('the board and winner should be printed when the game ends', () => {
+        const playerX = new Player("X");
+        const playerO = new Player("O");
+        const game = new TicTacToeGame(playerX, playerO);
+        game.start(game);
+        expect(game.printFinalBoard()).toHaveBeenCalled();
       })
 
   });

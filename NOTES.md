@@ -39,3 +39,4 @@ unit tests:
 3. ✅ The piece shouldn't be inserted if a piece is already there.
 4. ✅ After player X takes a turn, player O takes a turn (both using random numbers)
 5. ✅ The game should continue to be played until a winner or draw is established. 
+6. The board and winner should be printed win the game ends.
