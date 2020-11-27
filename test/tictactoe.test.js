@@ -126,5 +126,16 @@ describe("A tic tac toe game should be played", () => {
       let contains = row1 || row2 || row3;
       expect(contains).toEqual(true);
     });
+
+    it("The piece shouldn't be inserted if one is already there", () => {
+        const playerX = new Player("X");
+        const playerO = new Player("O");
+        const game = new TicTacToeGame(playerX, playerO);
+        game.start(game);
+        game.insertIntoBoard("X", 0, 0, game.board);
+        game.insertIntoBoard("O", 0, 0, game.board);
+
+        expect(game.board[0][0]).toEqual("X");
+      });
   });
 });

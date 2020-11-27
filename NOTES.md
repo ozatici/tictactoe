@@ -34,5 +34,6 @@ unit tests:
 4. ✅ should mark draw as the winner if the board is full and there is no winner
 
 ---> GAME PLAY
-1. The game should be started
-2. Player X should take a turn by inserting a piece
+1. ✅ The game should be started
+2. ✅ Player X should take a turn by inserting a piece
+3. The piece shouldn't be inserted if a piece is already there.
