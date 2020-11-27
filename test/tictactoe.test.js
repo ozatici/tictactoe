@@ -156,5 +156,14 @@ describe("A tic tac toe game should be played", () => {
 
         expect(XandYPresent).toEqual(true);
       });
+
+      it('the game should continue to be played until a winner or draw is established', () => {
+        const playerX = new Player("X");
+        const playerO = new Player("O");
+        const game = new TicTacToeGame(playerX, playerO);
+        game.start(game);
+        expect(game.winner).toNotEqual('');
+      })
+
   });
 });
