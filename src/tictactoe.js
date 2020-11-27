@@ -79,7 +79,11 @@ class TicTacToe {
   printFinalBoard(game) {
     this.printBoard(game);
 
-   console.log("PLAYER " + game.winner + " WON!")
+   if (game.winner === "DRAW") {
+       console.log("GAME ENDS WITH A DRAW!");
+   } else{
+    console.log("PLAYER " + game.winner + " WON!")
+   }
   }
 
   randomInteger(min, max) {
