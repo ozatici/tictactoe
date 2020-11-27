@@ -41,5 +41,13 @@ describe('A tic tac toe game should be played', () => {
             const game = new TicTacToeGame(playerX, playerO);
             expect(game.nextTurn).toEqual(playerX);
         });
+
+        it('should print to the console that the game was created along with the board and the next persons turn', () => {
+            const playerX = new Player("X");
+            const playerO = new Player("O");
+            const game = new TicTacToeGame(playerX, playerO);
+            console.log = jest.fn();
+            expect(console.log).toHaveBeenCalled();
+        })
     })
 })
