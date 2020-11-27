@@ -106,13 +106,6 @@ describe("A tic tac toe game should be played", () => {
   });
 
   describe("Playing the game", () => {
-    it("the game should be started", () => {
-      const playerX = new Player("X");
-      const playerO = new Player("O");
-      const game = new TicTacToeGame(playerX, playerO);
-      game.start(game);
-      expect(game.isStarted()).toEqual(true);
-    });
 
     it("Player X should take a turn by inserting a piece", () => {
       const playerX = new Player("X");
